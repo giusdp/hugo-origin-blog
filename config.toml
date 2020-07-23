@@ -1,0 +1,7 @@
+baseURL = "http://geedp.me/"
+languageCode = "en-us"
+title = "Geedp's Blog"
+theme = "origin"
+
+[params]
+  featured = true
