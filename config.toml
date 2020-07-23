@@ -2,6 +2,47 @@ baseURL = "http://geedp.me/"
 languageCode = "en-us"
 title = "Geedp's Blog"
 theme = "origin"
+author = "Giuseppe De Palma"
+copyright = "© 2020, Giuseppe De Palma"
+
+paginate = 4
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
 
 [params]
+  description = "Blog about my interests: computer science, game and web dev."
   featured = true
+  cssonly = false
+
+  [params.socials]
+    email = "ao"
+    twitter = "https://twitter.com/giusdp"
+    github = "https://github.com/giusdp"
+    linkedin = "https://www.linkedin.com/in/giuseppe-de-palma-a98610158/"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "whoami"
+    name = "whoami"
+    url = "/whoami/"
+    weight = 2
+  [[menu.main]]
+    identifier = "home"
+    name = "home"
+    url = "/"
+    weight = 1
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+[markup]
+  [markup.highlight]
+    style = "github"
+    tabWidth = 4
+
+[markup.goldmark.renderer]
+unsafe = true

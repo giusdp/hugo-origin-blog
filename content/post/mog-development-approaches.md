@@ -5,9 +5,9 @@ description: "A short introduction to multiplayer online games (MOG) development
 categories: ["Game Dev"]
 date: 2020-07-23T17:24:57+02:00
 draft: false
-tags: ["game dev", "multiplayer", "networks"]
+tags: ["game dev", "multiplayer"]
 series: ["MOG Development"]
-imagelink: "https://images.unsplash.com/photo-1587133599421-40a3cd84831b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
+imagelink: "/MOG/DedicatedServer.png"
 ---
 
 Lately I've been reading a lot about what's behind the "multiplayer" in multiplayer online games, commonly called netcode in gamers lingo.
