@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Geedp&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="A short introduction to multiplayer online games (MOG) development." />
+
+    <meta property="og:title" content="MOG: Development Approaches" />
+    <meta property="og:description" content="A short introduction to multiplayer online games (MOG) development." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://geedp.io/post/mog-development-approaches/" />
+    <meta itemprop="name" content="MOG: Development Approaches">
+    <meta itemprop="description" content="A short introduction to multiplayer online games (MOG) development.">
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="MOG: Development Approaches"/>
+    <meta name="twitter:description" content="A short introduction to multiplayer online games (MOG) development."/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+
+    
+    <link rel="stylesheet" href="https://geedp.io/scss/style.min.7d924ef9774ec20834568e42ea359840e26958ba74814c521b70b3cb5161c0bf.css" >
+</head>
+<body>
+    <header>
+    <div class="header header-frame">
+        <div>
+          
+            <h1 class="header__title">MOG: Development Approaches</h1>
+          
+            
+                <div class="header__description">A short introduction to multiplayer online games (MOG) development.</div>
+            
+        </div>
+        <nav class="header-nav">
+            <ul class="header-nav-list header-nav-list--menu">
+                
+                
+                    
+                        <li class="header-nav-list__item">
+                            <a class="header-nav-list__link" href="/">
+                                
+                                <span>home</span>
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li class="header-nav-list__item">
+                            <a class="header-nav-list__link" href="/whoami/">
+                                
+                                <span>whoami</span>
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+            <button class="header-nav-list__nav-btn">navigation</button>
+        </nav>
+        <button class="mb-header__menu-btn">
+            <span class="mb-header__menu-btn-line"></span>
+            <span class="mb-header__menu-btn-line"></span>
+            <span class="mb-header__menu-btn-line"></span>
+        </button>
+    </div>
+    <nav id="mobile-header-nav" class="mb-header-nav">
+  
+  
+  <button class="mb-header-nav__close-btn flex-center">
+    <svg
+            class="mb-header-nav__svg-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="32"
+            height="32"
+            >
+            <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+            <path d="M0 0h24v24H0z" fill="none" />
+        </svg>
+    </button>
+    
+    <div class="mb-header-nav__wrapper">
+        <div class="mb-header-nav__container">
+            <svg
+                width="240"
+                height="72"
+                viewBox="0 0 240 72"
+                class="mb-header-nav__title"
+                >
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                Tags
+                </text>
+            </svg>
+            <ul class="mb-header-nav-list">
+                
+                    
+                        
+                          <li class="mb-header-nav-list__item ">
+                        <a class="mb-header-nav-list__link" href="https://geedp.io/tags/game-dev/"
+                                                            >game dev</a
+                                                        >
+                    </li>
+                        
+                    
+                        
+                          <li class="mb-header-nav-list__item ">
+                        <a class="mb-header-nav-list__link" href="https://geedp.io/tags/multiplayer/"
+                                                            >multiplayer</a
+                                                        >
+                    </li>
+                        
+                    
+                
+            </ul>
+        </div>
+        <div class="mb-header-nav__container">
+            <svg
+                width="240"
+                height="72"
+                viewBox="0 0 240 72"
+                class="mb-header-nav__title"
+                >
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                Menu
+                </text>
+            </svg>
+            <ul class="mb-header-nav-list">
+                
+                
+                    
+                      <li class="mb-header-nav-list__item ">
+                            <a class="mb-header-nav-list__link" href="/">
+                                home
+                            </a>
+                        </li>
+                    
+                
+                    
+                      <li class="mb-header-nav-list__item ">
+                            <a class="mb-header-nav-list__link" href="/whoami/">
+                                whoami
+                            </a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</header>
+
+
+
+    <div id="content">
+<article class="post">
+  
+    <div class="post-content"><p>Lately I&rsquo;ve been reading a lot about what&rsquo;s behind the &ldquo;multiplayer&rdquo; in multiplayer online games, commonly called netcode in gamers lingo.
+How does networking work and how could we develop it from scratch?</p>
+<p>The literature is very sparse, books are few and tutorials and guides are almost always focused on a single ready-to-use solution. I&rsquo;ll try to summarize what I found.</p>
+<h1 id="multiplayer-online-games-mog">Multiplayer Online Games (MOG)</h1>
+<p>There are three well defined architecture for a MOG:</p>
+<h3 id="1-dedicated-server">1. Dedicated server</h3>
+<p>The dedicated server implies a standard <em>server/client</em> architecture, where a <strong>client</strong> is the game itself, and the <strong>server</strong> is a separate project that you have to build in parallel with the game.</p>
+<p>Many clients connect to the server and ideally they communicate every single input performed by the player.
+The server updates the state of the game and sends the results back to each client, so they are all synchronized between them.</p>
+<p align="center">
+<img src="/MOG/DedicatedServer.png"
+     alt="Dedicated Server Layout Image" />
+</p>
+<p>This is also called <strong>authoritative</strong> server, because it&rsquo;s the server that governs the game, it updates the state and the clients show to the player only what the server says. This is important to fight <strong>cheaters</strong>, if a client had power over the server, a cheater could keep telling the server that his character is at full health all the time.</p>
+<p>In reality it&rsquo;s not possible to have a completely dumb client that only sends inputs over the internet, waits for the next frame from the server and shows it. The latency would be too big and you would be playing a slide show. Several techniques are used to mitigate this problem while also keeping the server authoritative (client prediction, client interpolation, etc&hellip;). We will see them another time when we dive into authoritative servers.</p>
+<h3 id="2-player-hosted-server">2. Player-hosted server</h3>
+<p>This might be the most used architecture in my opinion, at least for the majority of online games I play (lots of indies and I&rsquo;m sure Super Smash Bros. Ultimate uses this one too). It&rsquo;s basically a dedicated server inside the game, hosted on one of the player computers.</p>
+<p>Games where people play in matches of few players usually go this way,
+a player is selected as host and the other players connect to them.</p>
+<p align="center">
+<img src="/MOG/PlayerHost.png"
+     alt="Player Hosted Server Image" />
+</p>
+<p>The main advantage is saving costs, the developers don&rsquo;t have to rent machines to host a dedicated server. I don&rsquo;t think I ever saw an indie game with multiplayer aspects that don&rsquo;t do multiplayer this way.</p>
+<p>Unfortunately this is not as secure against cheaters (the host might mess with the server), and cheating is the biggest problem when making an online game. Wherever I read about MOGs, everyone
+take this as a rule:</p>
+<blockquote class="border-l-4 border-teal-500 font-bold italic my-8 pl-8 md:pl-12">
+    You have cheaters in your multiplayer online game. Even if you think 
+    you don't, or there is no reason to cheat.
+</blockquote>
+<p>There are also two more problems: latency and host disconnection. Having the server on a normal residential connection won&rsquo;t always be a good experience for everyone.</p>
+<p>Latency will always be worse for everyone but the host, compared to a dedicated server positioned in near-to-players datacenters. This also means that the player host will always have an advantage against the connected players.</p>
+<p>The second problem happens when the host disconnects. No more host = match gets shut down, but this can be mitigated with some host migration technique to change host on the fly.</p>
+<h3 id="3-peer-to-peer">3. Peer to Peer</h3>
+<p>Peer to peer online games sounds nice, there is no server at all and every client performs its own computation and shares them with the other players. It looks like it&rsquo;s scalable out of the box, but
+it&rsquo;s the most susceptible to cheating.</p>
+<p>Without an all-knowing system that checks everything is in place,
+a peer could simply send the others wrong data to gain an advantage. For what I&rsquo;m seeing, everyone nowadays uses the first two approaches, meaning that authoritative servers became the standard.</p>
+<h2 id="development-workflows">Development Workflows</h2>
+<p>Let&rsquo;s say we decided to make a MOG with a dedicated server, how would we go on to develop it?
+One thing to keep in mind is that if we start working on our game leaving the networking part for later,
+it will be really hard (read impossible) to make it multiplayer.</p>
+<p>The server part has to be developed at the same time and it must be a priority during the entire development. In general there are two workflows for these types of games:</p>
+<ul>
+<li>Server-Driven Workflow</li>
+<li>Client-Driven Workflow</li>
+</ul>
+<h3 id="server-driven-workflow">Server-Driven Workflow</h3>
+<p>The former is entirely focused on the server, <em>the game is defined by its rules</em> (think classic card games) that are executed on the server. In this case the client is really just an interface.</p>
+<p>The majority of the work goes directly on the server side since that is the actual game, there is no &ldquo;game world&rdquo; or advanced graphics that play a role, no particular computation as a 3D game would require.</p>
+<p>If you want to create software such as stock exchanges, casino-like games, social games, digital board games, then approach them with a server-driven mindset. The game is the server itself, and you should have a good starting point to develop them.</p>
+<h3 id="client-driven-workflow">Client-Driven Workflow</h3>
+<p>The latter is the typical workflow used for most games. This workflow comes into play where <em>the game is defined by its content</em>. The development is more focused around the client,
+there is level design to do to create the world, the assets to be made, maybe it&rsquo;s even 3D etc. etc.</p>
+<p>With this workflow the designers have to keep in mind the game is not single player, so when designing content they have to take into account the distributed nature. The server-side has to be developed together with the client and tested at each step of the process.</p>
+<p>As I said above, making a single-player game and trying to transform it into multiplayer later it&rsquo;s a big no-no.</p>
+<p>This means that we have to do a &ldquo;continuous conversion&rdquo;. Develop the game as if it&rsquo;s a single-player for the most part and at the same time convert it to a multiplayer one, never skipping the conversion step. It helps to integrate the server into the developers&rsquo; toolchain. Everytime the game is tested, it is tested as a multiplayer game.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Now you can kinda understand how to approach online multiplayer, depending on the game. I will go on to the dedicated server option for a Client-Driven workflow and try to understand better it myself and explain what it consists of.</p>
+</div>
+  
+</article>
+<button class="floating-button">
+    <a class="floating-button__link" href="https://geedp.io">
+        <span>home</span>
+    </a>
+</button>
+
+
+    </div>
+    
+    <footer class="post-footer">
+    <div class="footer">
+        
+            <div>© 2020, Giuseppe De Palma</div>
+        
+        <div class="footer__socials">
+
+
+
+<a
+  href="https://twitter.com/giusdp"
+  target="_blank"
+  class="social-link"
+  title="Twitter link"
+  rel="noopener"
+  aria-label="follow on Twitter——Opens in a new window"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v24h24v-24h-24zm18.862 9.237c.208 4.617-3.235 9.765-9.33 9.765-1.854 0-3.579-.543-5.032-1.475 1.742.205 3.48-.278 4.86-1.359-1.437-.027-2.649-.976-3.066-2.28.515.098 1.021.069 1.482-.056-1.579-.317-2.668-1.739-2.633-3.26.442.246.949.394 1.486.411-1.461-.977-1.875-2.907-1.016-4.383 1.619 1.986 4.038 3.293 6.766 3.43-.479-2.053 1.079-4.03 3.198-4.03.944 0 1.797.398 2.396 1.037.748-.147 1.451-.42 2.085-.796-.245.767-.766 1.41-1.443 1.816.664-.08 1.297-.256 1.885-.517-.44.656-.997 1.234-1.638 1.697z"/></svg>
+</a>
+
+
+
+
+<a
+  href="https://www.linkedin.com/in/giuseppe-de-palma-a98610158/"
+  target="_blank"
+  class="social-link"
+  title="LinkedIn link"
+  rel="noopener"
+  aria-label="follow on LinkedIn——Opens in a new window"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v24h24v-24h-24zm8 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.397-2.586 7-2.777 7 2.476v6.759z"/></svg>
+</a>
+
+
+<a
+  href="https://github.com/giusdp"
+  target="_blank"
+  class="social-link"
+  title="Github link"
+  rel="noopener"
+  aria-label="follow on Github——Opens in a new window"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v24h24v-24h-24zm14.534 19.59c-.406.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.311-1.588-.824-2.147.083-.202.357-1.016-.079-2.117 0 0-.671-.215-2.198.82-.639-.18-1.323-.267-2.003-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"/></svg>
+</a>
+
+
+
+
+</div>
+    </div>
+</footer>
+
+
+    
+    
+      
+<script src="https://geedp.io/js/script.js"></script>
+
+    
+  </body>
+</html>

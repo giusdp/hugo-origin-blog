@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://geedp.io/categories/</loc>
+    <lastmod>2020-07-23T17:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geedp.io/categories/game-dev/</loc>
+    <lastmod>2020-07-23T17:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geedp.io/tags/game-dev/</loc>
+    <lastmod>2020-07-23T17:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geedp.io/</loc>
+    <lastmod>2020-07-23T17:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geedp.io/series/mog-development/</loc>
+    <lastmod>2020-07-23T17:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geedp.io/post/mog-development-approaches/</loc>
+    <lastmod>2020-07-23T17:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geedp.io/tags/multiplayer/</loc>
+    <lastmod>2020-07-23T17:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geedp.io/post/</loc>
+    <lastmod>2020-07-23T17:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geedp.io/series/</loc>
+    <lastmod>2020-07-23T17:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geedp.io/tags/</loc>
+    <lastmod>2020-07-23T17:24:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geedp.io/whoami/</loc>
+    <lastmod>1970-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>
