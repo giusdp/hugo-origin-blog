@@ -1,5 +1,4 @@
 baseURL = "https://geedp.io"
-publishDir = "docs"
 languageCode = "en-us"
 title = "Geedp's Blog"
 theme = "origin"
