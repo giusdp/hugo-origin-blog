@@ -1,10 +1,11 @@
-+++
-title = "whoami"
-description = ""
-date = "1970-01-01"
-aliases = ["about","about-me","contact"]
-author = "Giuseppe De Palma"
-+++
+---
+title: "whoami"
+description: ""
+date: "1970-01-01"
+tags: ["info"]
+aliases: ["about", "about-me", "contact"]
+author: "Giuseppe De Palma"
+---
 
 Italian guy who just finished a Master in Computer Science (max grade of the italian academic grading cum laude, woohoo!). My main interests are devops, game and web dev. But let's say software in general.
 
