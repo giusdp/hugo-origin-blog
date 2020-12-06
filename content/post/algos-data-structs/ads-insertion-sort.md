@@ -1,7 +1,7 @@
 ---
 author: "Giuseppe De Palma"
 title: "Insertion sort it again."
-description: "The first of a series of post where I try to implement many algos and data structures, just an excuse to go over them for myself."
+description: "The first post where I try to implement algos and data structures, an excuse to go over them for myself."
 categories: ["Algorithms & Data Structures"]
 date: 2020-12-04T11:55:21+00:00
 draft: false
