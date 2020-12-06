@@ -6,7 +6,7 @@ categories: ["Algorithms & Data Structures"]
 date: 2020-12-04T11:55:21+00:00
 draft: false
 tags: ["algorithms", "computer science"]
-imagelink: "ADS/Tree.png"
+imagelink: "/ADS/Tree.png"
 ---
 
 Often times I found in the internet computer science challenges as in "X days of algorithms" where people have to write each day about some algorithm. So I thought: I wanna do it too!
